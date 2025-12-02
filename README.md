@@ -1,4 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Oregon I/DD Market Analysis Dashboard
+
+A comprehensive market analysis dashboard for Oregon Developmental Disabilities (I/DD) services, developed by VYRITE, LLC. This application provides strategic insights for service providers looking to enter or expand within the Oregon market.
+
+## Features
+
+- **County-Level Analysis**: detailed breakdown of all 36 Oregon counties.
+- **Opportunity Scoring**: Proprietary scoring model evaluating market attractiveness based on unmet needs, competition, and growth.
+- **Interactive Visualizations**:
+  - Top 10 Opportunities
+  - Tier Distribution
+  - Investment Level Analysis
+- **Strategic Filtering**: Filter markets by Tier, Unmet Need, Competition Level, and Market Entry Ease.
+- **Detailed Reports**: In-depth modal views for each county with executive summaries, risk assessments, and financial projections.
+- **Authentication**: Secure access control (currently configured with demo credentials).
+
+## Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Charts**: [Recharts](https://recharts.org/)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## Getting Started
 
@@ -16,21 +38,31 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment on Cloudflare Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This application is optimized for deployment on Cloudflare Pages using the `@cloudflare/next-on-pages` adapter.
 
-## Learn More
+### Build Command
 
-To learn more about Next.js, take a look at the following resources:
+The project uses `npm run pages:build` to generate the worker-compatible output.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run pages:build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Deploy
 
-## Deploy on Vercel
+To deploy to Cloudflare Pages:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run pages:deploy
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Configuration
+
+Deployment settings are managed in `wrangler.toml`. The build output directory is set to `.vercel/output/static` to be compatible with Cloudflare's expectation for Next.js static exports or the `next-on-pages` output structure.
+
+## License
+
+&copy; 2025 VYRITE LLC. All rights reserved.
+Oregon I/DD Market Analysis™ is a trademark of VYRITE, LLC.
