@@ -1,21 +1,25 @@
 {
-  "name": "oregon-dd-dashboard",
+  "name": "idd-market-analysis",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:preview": "npm run pages:build && wrangler pages dev",
+    "pages:deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "lucide-react": "^0.555.0",
-    "next": "16.0.6",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "next": "^15.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "recharts": "^3.5.1"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -23,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.51.0"
   }
 }
