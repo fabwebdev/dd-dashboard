@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "I/DD Analysis Dashboard",
   description: "Comprehensive market analysis dashboard for Oregon developmental disabilities services",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
